@@ -9,7 +9,7 @@ Quick start
 To create a 3 node cluster, run:
 
 ```
-bash <(curl -s https://raw.githubusercontent.com/gustavonalle/flink-docker/flink/cluster.sh)
+bash <(curl -s https://raw.githubusercontent.com/gustavonalle/flink-docker/master/cluster.sh)
 ```
 
 
