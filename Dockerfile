@@ -1,7 +1,7 @@
 FROM alpine:3.3 
 MAINTAINER gustavonalle
 
-ENV FLINK_VERSION 0.10.1
+ENV FLINK_VERSION 1.0.3
 ENV FLINK_HADOOP hadoop27
 
 RUN echo "http://dl-4.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories \
