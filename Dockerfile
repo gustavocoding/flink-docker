@@ -1,15 +1,15 @@
 FROM alpine:3.3 
 MAINTAINER gustavonalle
 
-ENV FLINK_VERSION 1.0.3
-ENV FLINK_HADOOP hadoop27
+ENV FLINK_VERSION 1.7.1
+ENV FLINK_HADOOP hadoop28
 
 RUN echo "http://dl-4.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories \
     && apk add --update \
     curl openjdk8 openssh ruby bash cracklib-words supervisor procps \
     && rm /var/cache/apk/*
 
-RUN curl "http://www.mirrorservice.org/sites/ftp.apache.org/flink/flink-$FLINK_VERSION/flink-$FLINK_VERSION-bin-$FLINK_HADOOP-scala_2.10.tgz" | tar -C /usr/local/ -xz | ln -s /usr/local/flink-$FLINK_VERSION/ /usr/local/flink
+RUN curl "https://www-eu.apache.org/dist/flink/flink-$FLINK_VERSION/flink-$FLINK_VERSION-bin-$FLINK_HADOOP-scala_2.11.tgz" | tar -C /usr/local/ -xz | ln -s /usr/local/flink-$FLINK_VERSION/ /usr/local/flink
 
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
